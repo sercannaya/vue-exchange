@@ -1,7 +1,10 @@
 <template>
     <div>
     
-        <app-header />
+        <app-header 
+            :menu_items="menuItems"
+        />
+
         <hero />
 
     <section class="posts">
@@ -31,6 +34,20 @@
             Hero,
             Pagination,
             ExchangeList
+        },
+        data(){
+            return{
+
+                brandName: 'Sercan NAYA',
+                menuItems: [
+                    { text: 'Home', link: '/' },
+                    { text: 'About', link: '/about' },
+                    { text: 'FAQ', link: '/faq' },
+                    { text: 'Login', link: '/login' },
+                    { text: 'Register', link: 'register' }
+                ]
+
+            }
         }
     }
 </script>

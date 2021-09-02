@@ -1,33 +1,68 @@
 <template>
 
-    <header class="header">
-      <nav class="navbar">
-        <div class="container">
+        <header class="header">
+            <nav class="navbar">
+                <div class="container">
 
-          <div class="navbar-brand">
-            <a class="navbar-item has-text-white is-size-2 has-text-weight-bold" href="#">
-              Your App
-            </a>
-            <span role="button" tabindex="0" class="navbar-burger burger has-text-white" data-target="navbar-menu">
-              <span></span>
-              <span></span>
-              <span></span>
-            </span>
-          </div>
+                    <div class="navbar-brand">
+                        <a 
+                            @click="alertMessage('This is a test Message!!')"
+                            class="navbar-item has-text-white is-size-2 has-text-weight-bold" 
+                            href="#">
+                            {{ brandName }}
+                        </a>
+                        <span role="button" tabindex="0" class="navbar-burger burger has-text-white" data-target="navbar-menu">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </span>
+                    </div>
 
-          <div id="navbar-menu" class="navbar-menu">
-            <div class="navbar-end">
-              <!-- Loop through the navigation items -->
-              <a class="navbar-item nav-home" href="#">Home</a>
-              <a class="navbar-item nav-style-guide" href="#">About</a>
-              <a class="navbar-item nav-features" href="#">FAQ</a>
-              <a class="navbar-item nav-tech" href="#">Login</a>
-              <a class="navbar-item nav-web" href="#">Register</a>
-            </div>
-          </div>
+                    <div id="navbar-menu" class="navbar-menu">
+                        <div class="navbar-end">
+                            <a 
+                                v-for="menu_item in menu_items"
+                                :key="menu_item.text"
+                                :href="menu_item.link"
 
-        </div>
-      </nav>
-    </header>
+                                class="navbar-item nav-home">{{ menu_item.text }}</a>
+                        </div>
+                    </div>
+
+                </div>
+            </nav>
+        </header>
 
 </template>
+
+<script>
+
+    export default {
+        //props: ['brandName', 'menu_items']
+        props: {
+            brandName: {
+                type: String,
+                default: 'Sercan NAYA'
+            },
+            menu_items: {
+                type: Array,
+                required: true
+            }
+        },
+
+        methods: {
+            alertMessage(message){
+                alert(message)
+            }
+        }
+    }
+
+
+</script>
+
+
+
+
+
+
+
