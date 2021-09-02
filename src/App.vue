@@ -44,14 +44,17 @@
     .hero-section {
         position: relative;
     }
+
     .posts {
         padding-top: 70px;
     }
+
     .posts-type {
     font-size: 34px;
     margin-bottom: 10px;
     font-weight: bold;
     }
+
     .search-lookup {
         width: 960px;
         margin: 0 auto;
@@ -60,13 +63,15 @@
         color: white;
         border-radius: 10px;
     }
-        .search-lookup-wrap {
+
+    .search-lookup-wrap {
         width: 100%;
         z-index: 2;
         position: absolute;
         top: auto;
         bottom: -42px;
     }
+    
     .search-card-find {
         width: 100%;
         height: 180px;
