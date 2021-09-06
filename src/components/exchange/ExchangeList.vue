@@ -11,14 +11,14 @@
                     <a class="item-link" href="#">
 
                         <figure class="image is-2by1 item-figure background-img" 
-
                         :style="{ 'background-image': `url(${exchange.image})` }"
                         alt="image">
-
                         </figure>
 
                         <div class="item-featured">
-                        Icon
+                            <div class="exchange-icon">
+                                <font-awesome-icon icon="star" />
+                            </div>
                         </div>
 
                     </a>
@@ -65,6 +65,21 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+
+    .exchange-icon {
+        height: 25px;
+        width: 25px;
+        color: #ffbc8c;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+
+
+</style>
 
 
 

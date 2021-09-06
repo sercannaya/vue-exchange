@@ -1,77 +1,20 @@
 <template>
     <div>
-    
-        <app-header 
-            :menu_items="menuItems"
-        />
-
-        <hero />
-
-    <section class="posts">
-        <div class="container">
-            <div class="posts-type">Latest Posts</div>
-                <exchange-list 
-                
-                    :exchanges = "exchanges" 
-
-                />
-                <!-- provides exchanges -->
-        </div>
-    </section>
-
-    <Pagination />
-
+            <app-header 
+        :menu_items="menuItems" />
+        <router-view />
   </div>
 </template>
 
 <script>
+import AppHeader from '@/components/Header.vue'
 
-    import AppHeader from '@/components/Header.vue'
-    import Hero from '@/components/Hero.vue'
-    import Pagination from '@/components/Pagination.vue'
-    import ExchangeList from '@/components/exchange/ExchangeList.vue'
-
-    const exchanges = [{
-      id: "ad7asdsa68dasd",
-      type: "product", // service or product
-      title: "I have Driller",
-      description: "I will exchange this super driller...",
-      value: 20, // value per hour in case of service,
-      user: "2398173193",
-      image: "https://images.unsplash.com/photo-1458829549177-e9a8f3db5b14?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80",
-      country: "Germany",
-      city: "Berlin",
-      status: "active",
-      tags: ["tools", "helping"] // can be active/inactive,
-    },
-    {
-      id: "ad7asdsa68dasd",
-      type: "service", // service or product
-      title: "I will teach programming",
-      description: "I will make you super programmer",
-      value: 20, // value per hour in case of service,
-      user: "2398173193",
-      image: "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80",
-      country: "Germany",
-      city: "Berlin",
-      status: "active",
-      tags: ["programming", "pc"] // can be active/inactive
-    }]
-
-
-    export default {
-        name: 'app',
-        components: {
-            AppHeader,
-            Hero,
-            Pagination,
-            ExchangeList
-        },
-        data(){
-            return{
-
+export default {
+    name: 'app',
+    components: { AppHeader },
+    data() {
+        return{
                 brandName: 'Sercan NAYA',
-                exchanges,
                 menuItems: [
                     { text: 'Home', link: '/' },
                     { text: 'About', link: '/about' },
@@ -79,10 +22,10 @@
                     { text: 'Login', link: '/login' },
                     { text: 'Register', link: 'register' }
                 ]
-
-            }
         }
     }
+
+}
 </script>
 
 <style lang="scss">
