@@ -1,12 +1,13 @@
 <template>
-
         <header class="header">
-            <nav class="navbar">
+            <nav 
+            class="navbar"
+            :class="$route.path === '/' ? '' : 'with-background' ">
                 <div class="container">
 
                     <div class="navbar-brand">
                         <a 
-                            @click="alertMessage('This is a test Message!!')"
+                            @click="alertMessage()"
                             class="navbar-item has-text-white is-size-2 has-text-weight-bold" 
                             href="#">
                             {{ brandName }}
@@ -20,19 +21,18 @@
 
                     <div id="navbar-menu" class="navbar-menu">
                         <div class="navbar-end">
-                            <a 
+                            <router-link 
                                 v-for="menu_item in menu_items"
                                 :key="menu_item.text"
-                                :href="menu_item.link"
+                                :to="menu_item.link"
 
-                                class="navbar-item nav-home">{{ menu_item.text }}</a>
+                                class="navbar-item nav-home">{{ menu_item.text }}</router-link>
                         </div>
                     </div>
 
                 </div>
             </nav>
         </header>
-
 </template>
 
 <script>
@@ -51,8 +51,8 @@
         },
 
         methods: {
-            alertMessage(message){
-                alert(message)
+            alertMessage(){
+                alert(this.$route.path)
             }
         }
     }

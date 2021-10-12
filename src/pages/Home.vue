@@ -1,10 +1,6 @@
 <template>
     <div>
-    
-
-
     <hero />
-
     <section class="posts">
         <div class="container">
             <div class="posts-type">Latest Posts</div>
@@ -14,8 +10,10 @@
                 <!-- provides exchanges -->
         </div>
     </section>
+    <button 
+        @click="$store.dispatch('test')"
+        class="button is-primary">Test Vuex</button>
     <Pagination />
-
   </div>
 </template>
 
@@ -40,7 +38,7 @@
       tags: ["tools", "helping"] // can be active/inactive,
     },
     {
-      id: "ad7asdsa68dasd",
+      id: "sa54das6d45as6d4as56d41sa",
       type: "service", // service or product
       title: "I will teach programming",
       description: "I will make you super programmer",

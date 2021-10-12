@@ -70,6 +70,10 @@ h1 {
     .navbar {
       background: transparent;
       min-height: 4.5rem;
+
+      &.with-background {
+        background-color: $dark-blue-color;
+      }
   
       &-menu {
         .navbar-item {
@@ -81,8 +85,12 @@ h1 {
             background-color: transparent;
             color: $primary;
           }
+
+          &:focus {
+            background-color: transparent;
+          }
         }
-  
+
         &.is-active {
           .navbar-item { color: $dark; }
         }
